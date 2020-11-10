@@ -60,11 +60,10 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Serviços</h6>
-                        <a class="collapse-item" href="#">Login</a>
-                        <a class="collapse-item" href="#">Registrar Colaborador</a>
-                        <a class="collapse-item" href="#">Registrar Cliente</a>
-                        <a class="collapse-item" href="#">Agendamento de corte</a>
+                    <h6 class="collapse-header">Serviços</h6>
+                        <a class="collapse-item" href="cad_colaborador.php">Registrar Colaborador</a>
+                        <a class="collapse-item" href="cad_cliente.php">Registrar Cliente</a>
+                        <a class="collapse-item" href="agendamento.php">Agendamento de corte</a>
                     </div>
                 </div>
             </li>
@@ -76,7 +75,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
+          
 
 
         </ul>
@@ -87,18 +86,38 @@
 
             <div id="content">
 
-                <!-- Topbar -->
+              
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
+                 
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php 
+                               include "banco.php"; include 'crud_verifica_login.php';  echo $_SESSION["nome"]; ?></span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                          
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="crud_logout.php">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="crud_logout.php">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
 
                 </nav>
-                <!-- End of Topbar -->
+                
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

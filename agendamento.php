@@ -56,15 +56,14 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilizades</span>
+                    <span>Sistema</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Serviços</h6>
-                        <a class="collapse-item" href="#">Login</a>
-                        <a class="collapse-item" href="">Registrar Colaborador</a>
-                        <a class="collapse-item" href="#">Registrar Cliente</a>
-                        <a class="collapse-item" href="http://localhost/barbearia/trunk/agedamento.php">Agendamento de corte</a>
+                        <a class="collapse-item" href="cad_colaborador.php">Registrar Colaborador</a>
+                        <a class="collapse-item" href="cad_cliente.php">Registrar Cliente</a>
+                        <a class="collapse-item" href="agendamento.php">Agendamento de corte</a>
                     </div>
                 </div>
             </li>
@@ -111,11 +110,36 @@
                                     <h1 class="h4 text-gray-900 mb-4">Agendamento de Serviços</h1>
                                 </div>
                                 <form class="user">
+                                    <?php
+                                    $dados;
+                                    if (isset($_GET["cod_servico"])) {
 
+                                        $queryCliente = $conexao->query("SELECT * FROM agendamento WHERE cod_servico = " . $_GET["cod_servico"]);
+                                        $dados = $queryCliente->fetch_assoc();
+                                    ?>
+                                        <input type="hidden" name="cod_servico" value="<?php echo $_GET["cod_servico"]; ?>" />
+                                    <?php } ?>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label><strong>Nome : </strong></label>
+                                            <input type="text" name="nome_cliente" class="form-control form-control-user" id="exampleFirstName" placeholder="Digite o nome do cliente" value="<?php if (isset($_GET["cod_servico "])) {
+                                                                                                                                                                                                    echo $dados["nome_cliente"];
+                                                                                                                                                                                                } ?>">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label><strong> Telefone: </strong></label>
+
+                                            <input type="text" name="telefone" class="form-control form-control-user" id="exampleLastName" placeholder="Digite o telefone do cliente" value="<?php if (isset($_GET["cod_servico "])) {
+                                                                                                                                                                                                    echo $dados["telefone"];
+                                                                                                                                                                                                } ?>">
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6">
                                             <label><strong> Data desejada :</strong></label>
-                                            <input type="date" name="data_agendamento" class="form-control form-control-user" id="exampleRepeatPassword">
+                                            <input type="date" name="data_agendamento" class="form-control form-control-user" id="exampleRepeatPassword" value="<?php if (isset($_GET["cod_servico"])) {
+                                                                                                                                                                    echo $dados["data_agendamento"];
+                                                                                                                                                                } ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -168,10 +192,45 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label><strong> Tipo de serviço :</strong></label>
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="email" name="status" class="form-control form-control-user" id="exampleInputEmail" placeholder="Tipo de procedimento agendado">
-                                        </div>
+                                        <?php
+
+                                        $servicos = array(
+                                            "Corte de cabelo" => "Corte de cabelo",
+                                            "Barba" => "Barba",
+                                            "Corte na navalha" => "Corte na navalha",
+                                            "Pintura" => "Pintura",
+                                            "Corte e Barba" => "Corte e Barba",
+                                            "Sobracelha" => "Sobracelha",
+
+                                        );
+                                        ?>
+                                        <label for="inputLastName">Selecione um Serviço:</label>
+                                        <select class="form-control form-control-user" aria-placeholder="Selecione" name="horario">
+
+
+                                            <?php
+                                            # A logica utilizada nos selects é diferente dos demais blocos de codigo do nosso sistema
+                                            if (isset($_GET["cod_servico"])) {
+                                                $resultadoVerificaHorario = $conexao->query("SELECT * FROM atendimento WHERE cod_servico = " . $_GET["cod_servico"]);
+                                                $dadosverificaHorario = $resultadoVerificaHorario->fetch_assoc();
+                                                foreach ($servicos as $key => $value) {
+                                                    if ($dadosverificaHorario["horario"] == $key) {
+                                                        echo "<option value=" . $key . " selected>" . $value . "</option>";
+                                                    } else {
+                                                        echo "<option value=" . $key . ">" . $value . "</option>";
+                                                    }
+                                                }
+                                            } else {
+                                                foreach ($servicos as $key => $value) {
+                                                    echo "<option value=" . $key . ">" . $value . "</option>";
+                                                }
+                                            }
+                                            ?>
+
+
+
+
+                                        </select>
 
                                     </div>
                                     <div class="form-group row">
@@ -199,6 +258,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                        <th>ID do Servico</th>
                                             <th>Nome</th>
                                             <th>Telefone</th>
                                             <th>E-mail</th>
@@ -207,14 +267,33 @@
 
                                         </tr>
                                     </thead>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                    <?php
+                                    include "banco.php";
 
-                                    </tr>
+                                    $consultaTabela = "";
+
+                                    $consultaTabela = "SELECT * FROM agendamento";
+
+                                    $queryClietes = $conexao->query($consultaTabela);
+
+                                    while ($dados = $queryClietes->fetch_assoc()) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $dados["id_cliente"]; ?></td>
+                                            <td><?php echo $dados["nome"]; ?></td>
+                                            <td><?php echo $dados["email"]; ?></td>
+                                            <td><?php echo $dados["data_nascimento"]; ?></td>
+                                            <td><?php echo $dados["telefone"]; ?></td>
+                                            <td><?php echo $dados["ativo"]; ?></td>
+                                            <td> <a href="cad_cliente.php?id_cliente=<?php echo $dados["id_cliente"]; ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                &nbsp;&nbsp;
+
+
+
+                                                <a href="crud_cliente.php?excluir=1&id_cliente=<?php echo $dados["id_cliente"]; ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a></td>
+
+                                        </tr>
+                                    <?php  } ?>
 
                                     </tbody>
                                 </table>
