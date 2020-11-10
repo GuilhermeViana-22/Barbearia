@@ -124,7 +124,7 @@
                             <div class="container">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Barbearia High Hills</h1>
-                                    <img src="../trunk/img/Background.jpeg" style="width: 100%;">
+                                    <img src="../trunk/img/undraw_barber_3uel.svg" style="width: 90%;">
                                 </div>
 
                             </div>

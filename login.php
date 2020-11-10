@@ -33,7 +33,7 @@
                     <div class="card-body p-0">
                       
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"><img src="img/utilizador.png" style="top:100px; left:100px;"></div>
+                            <div class="col-lg-6 d-none d-lg-block"><img src="img/undraw_secure_login_pdn4.svg" style=" width: 350px; margin-top:50px; margin-left:100px;"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
