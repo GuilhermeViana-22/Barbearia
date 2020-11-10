@@ -26,10 +26,10 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion"  id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cut"></i>
                 </div>
@@ -40,12 +40,12 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-      
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-          
-       
+
+
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -54,8 +54,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Utilizades</span>
                 </a>
@@ -78,7 +77,7 @@
             </div>
 
             <!-- Sidebar Message -->
-     
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -86,7 +85,6 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
@@ -98,21 +96,26 @@
                     </button>
 
                     <!-- Topbar Search -->
-               
+
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-          
-             
 
-                    <!-- Content Row -->
-         
-
-                    <!-- Content Row -->
-
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Barbearia High Hills</h1>
+                                    <img src="../trunk/img/Background.jpeg" style="width: 100%;">
+                                </div>
+                             
+                        </div>
+                     
+                        </form>
+                    </div>
                 </div>
 
             </div>

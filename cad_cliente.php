@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
 
+
+
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -48,7 +50,7 @@
             <a href="login.html" class="btn btn-primary btn-user btn-block">
                 Register Account
             </a>
-
+        </form>
 
     </div>
 
@@ -59,3 +61,7 @@
     <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+
+
+</html>
+
