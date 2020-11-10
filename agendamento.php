@@ -167,53 +167,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <?php
-
-                                                $servicos = array(
-                                                    "Corte de cabelo" => "Corte de cabelo",
-                                                    "Barba" => "Barba",
-                                                    "Corte na navalha" => "Corte na navalha",
-                                                    "Pintura" => "Pintura",
-                                                    "Corte e Barba" => "Corte e Barba",
-                                                    "Sobracelha" => "Sobracelha",
-
-                                                );
-                                                ?>
-
-                                                <label for="inputLastName">Selecione um Serviço:</label>
-                                                <select class="form-control form-control-user" aria-placeholder="Selecione" name="horario">
-
-
-                                                    <?php
-                                                    # A logica utilizada nos selects é diferente dos demais blocos de codigo do nosso sistema
-                                                    if (isset($_GET["cod_servico"])) {
-                                                        $resultadoVerificaHorario = $conexao->query("SELECT * FROM atendimento WHERE cod_servico = " . $_GET["cod_servico"]);
-                                                        $dadosverificaHorario = $resultadoVerificaHorario->fetch_assoc();
-                                                        foreach ($servicos as $key => $value) {
-                                                            if ($dadosverificaHorario["horario"] == $key) {
-                                                                echo "<option value=" . $key . " selected>" . $value . "</option>";
-                                                            } else {
-                                                                echo "<option value=" . $key . ">" . $value . "</option>";
-                                                            }
-                                                        }
-                                                    } else {
-                                                        foreach ($servicos as $key => $value) {
-                                                            echo "<option value=" . $key . ">" . $value . "</option>";
-                                                        }
-                                                    }
-                                                    ?>
-
-
-
-
-                                                </select>
-                                            </div>
+                                    <div class="form-group">
+                                        <label><strong> Tipo de serviço :</strong></label>
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="email" name="status" class="form-control form-control-user" id="exampleInputEmail" placeholder="Tipo de procedimento agendado">
                                         </div>
+
                                     </div>
-                                  
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
 
@@ -232,8 +192,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
                         </form>
-                        <br>
-                        <br>
+
 
                         <div class="card-body">
                             <div class="table-responsive">
