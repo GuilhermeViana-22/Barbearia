@@ -9,26 +9,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>High Hill - Cadastro cliente</title>
 
-    <!-- Custom fonts for this template-->
+  
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
+   
     <div id="wrapper">
 
-        <!-- Sidebar -->
+  
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
+    
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cut"></i>
@@ -36,10 +36,10 @@
                 <div class="sidebar-brand-text mx-3">Barbearia High Hills <sup>2</sup></div>
             </a>
 
-            <!-- Divider -->
+       
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+     
 
 
 
@@ -96,16 +96,14 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php 
-                               include "banco.php"; include 'crud_verifica_login.php';  echo $_SESSION["nome"]; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
+                                                                                            include "banco.php";
+                                                                                            include 'crud_verifica_login.php';
+                                                                                            echo $_SESSION["nome"]; ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
+                            
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="crud_logout.php">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="crud_logout.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -123,16 +121,10 @@
 
                         <div class="alert alert-success">
                             <?php
-                            # esse numero 1 refere-se a mensagem de sucesso exibida  no inicio da tela
-                            # se o if ficar atrelado ao primeiro laço ele estará no laço de inserir referenciado no 
-                            # crud_cliente
-                            # logo ele retorna a mensagem de cliente inserido com sucsso
+                           
                             if ($_GET["sucesso"] == 1) {
                                 echo "Cliente inserido com sucesso!";
-                                # esse numero 2 refere-se a mensagem de sucesso exibida  no inicio da tela
-                                # se o if ficar atrelado ao segundo laço ele estará no laço de atualizar que esta referenciado no 
-                                # crud_cliente
-                                # logo ele retorna a mensagem de cliente inserido com sucsso
+                             
                             } else if ($_GET["sucesso"] == 2) {
                                 echo "Cliente atualizado com sucesso!";
                             } else {
@@ -266,7 +258,7 @@
                                         </tr>
                                     </thead>
                                     <?php
-                                    include "banco.php";
+                                    #include "banco.php";
 
                                     $consultaTabela = "";
 
@@ -300,9 +292,7 @@
                 </div>
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
+         
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -310,10 +300,10 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
+          
 
         </div>
-        <!-- End of Content Wrapper -->
+        
 
     </div>
 
