@@ -73,12 +73,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-
-
-
         </ul>
-
-
 
         <div id="content-wrapper" class="d-flex flex-column">
 
