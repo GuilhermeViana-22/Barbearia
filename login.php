@@ -54,7 +54,7 @@
 
                                         <?php } else if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
 
-                                            <div class="alert alert-danger">>
+                                            <div class="alert alert-danger">
                                                 Você não está logado.<br />Faça o login.
                                             </div>
                                         <?php } ?>
