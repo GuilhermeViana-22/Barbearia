@@ -1,5 +1,5 @@
 <?php
-   $conexao = new mysqli('dff7u01usmdcg1','grjjfrrijsicop','','barbearia');   
+   $conexao = new mysqli('localhost','root','','barbearia');   
     session_start();
 
 ?>

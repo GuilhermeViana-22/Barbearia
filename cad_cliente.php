@@ -11,24 +11,24 @@
 
     <title>High Hill - Cadastro cliente</title>
 
-  
+
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    
+
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-   
+
     <div id="wrapper">
 
-  
+
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    
+
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cut"></i>
@@ -36,10 +36,10 @@
                 <div class="sidebar-brand-text mx-3">Barbearia High Hills <sup>2</sup></div>
             </a>
 
-       
+
             <hr class="sidebar-divider my-0">
 
-     
+
 
 
 
@@ -102,7 +102,7 @@
                                                                                             echo $_SESSION["nome"]; ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
-                            
+
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="crud_logout.php">
@@ -121,10 +121,9 @@
 
                         <div class="alert alert-success">
                             <?php
-                           
+
                             if ($_GET["sucesso"] == 1) {
                                 echo "Cliente inserido com sucesso!";
-                             
                             } else if ($_GET["sucesso"] == 2) {
                                 echo "Cliente atualizado com sucesso!";
                             } else {
@@ -159,7 +158,7 @@
                                     <?php
                                     $dados;
                                     if (isset($_GET["id_cliente"])) {
-                                        include "banco.php";
+                                        # include "banco.php";
                                         $queryCliente = $conexao->query("SELECT * FROM cliente WHERE id_cliente = " . $_GET["id_cliente"]);
                                         $dados = $queryCliente->fetch_assoc();
                                     ?>
@@ -292,7 +291,7 @@
                 </div>
 
             </div>
-         
+
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -300,10 +299,10 @@
                     </div>
                 </div>
             </footer>
-          
+
 
         </div>
-        
+
 
     </div>
 
@@ -320,7 +319,8 @@
     <script src="js/sb-admin-2.min.js"></script>
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/jquery.mask.js"></script>
+
     <script>
         jQuery(document).ready(function() {
             $('.nome').mask('A', {
@@ -334,7 +334,9 @@
             $('.cpf').mask('000.000.000-00', {
                 reverse: true
             });
+           
             $('.telefone').mask("(00)00000-0000")
+           
         })
     </script>
 </body>

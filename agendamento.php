@@ -11,24 +11,24 @@
 
     <title>High Hill - agendamento</title>
 
-   
+
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    
+
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-    
+
     <div id="wrapper">
 
-       
+
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
-          
+
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cut"></i>
@@ -36,23 +36,23 @@
                 <div class="sidebar-brand-text mx-3">Barbearia High Hills <sup>2</sup></div>
             </a>
 
-            
+
             <hr class="sidebar-divider my-0">
 
-          
 
 
-          
+
+
             <hr class="sidebar-divider">
 
 
 
-           
+
             <div class="sidebar-heading">
                 Addons
             </div>
 
-           
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -67,29 +67,29 @@
                     </div>
                 </div>
             </li>
-           
+
             <hr class="sidebar-divider d-none d-md-block">
 
-           
+
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            
+
 
 
         </ul>
-       
 
-      
+
+
         <div id="content-wrapper" class="d-flex flex-column">
 
             <div id="content">
 
-             
+
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    
+
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
@@ -103,7 +103,7 @@
                                                                                             echo $_SESSION["nome"]; ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
-                            
+
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="crud_logout.php">
@@ -116,7 +116,7 @@
 
                 </nav>
 
-               +
+                
                 <div class="container-fluid">
 
 
@@ -127,10 +127,9 @@
 
                                     <div class="alert alert-success">
                                         <?php
-                                      
+
                                         if ($_GET["sucesso"] == 1) {
                                             echo "Cliente inserido com sucesso!";
-                                           
                                         } else if ($_GET["sucesso"] == 2) {
                                             echo "Cliente atualizado com sucesso!";
                                         } else {
@@ -157,7 +156,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Agendamento de Serviços</h1>
                                 </div>
-                                <form class="user" action="crud_agendamento.php" method="post">
+                                <form class="user" action="crud_agendamento.php" method="post" data-toggle="validator" role="form">
                                     <?php
                                     $dados;
                                     if (isset($_GET["cod_servico"])) {
@@ -170,16 +169,16 @@
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <label><strong>Nome : </strong></label>
-                                            <input type="text" name="nome_cliente" class="form-control form-control-user" id="exampleFirstName" placeholder="Digite o nome do cliente" value="<?php if (isset($_GET["cod_servico"])) {
+                                            <input type="text" name="nome_cliente" class="form-control form-control-user nome" id="exampleFirstName" placeholder="Digite o nome do cliente" value="<?php if (isset($_GET["cod_servico"])) {
                                                                                                                                                                                                     echo $dados["nome_cliente"];
-                                                                                                                                                                                                } ?>">
+                                                                                                                                                                                                } ?>" required>
                                         </div>
                                         <div class="col-sm-6">
                                             <label><strong> Telefone: </strong></label>
 
-                                            <input type="text" name="telefone" class="form-control form-control-user" id="exampleLastName" placeholder="Digite o telefone do cliente" value="<?php if (isset($_GET["cod_servico"])) {
+                                            <input type="text" name="telefone" class="form-control form-control-user telefone" id="exampleLastName" placeholder="Digite o telefone do cliente" value="<?php if (isset($_GET["cod_servico"])) {
                                                                                                                                                                                                     echo $dados["telefone"];
-                                                                                                                                                                                                } ?>">
+                                                                                                                                                                                                } ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -212,7 +211,7 @@
                                                 <label for="inputLastName">Selecione um dos horários:</label>
                                                 <select class="form-control form-control" aria-placeholder="Selecione" name="horario">
                                                     <?php
-                         
+
                                                     if (isset($_GET["cod_servico"])) {
                                                         $resultadoVerificaHorario = $conexao->query("SELECT * FROM agendamento WHERE cod_servico = " . $_GET["cod_servico"]);
                                                         $dadosverificaHorario = $resultadoVerificaHorario->fetch_assoc();
@@ -255,7 +254,7 @@
 
 
                                             <?php
-                                         
+
                                             if (isset($_GET["cod_servico"])) {
                                                 $resultadoVerificaHorario = $conexao->query("SELECT * FROM agendamento WHERE cod_servico = " . $_GET["cod_servico"]);
                                                 $dadosverificaHorario = $resultadoVerificaHorario->fetch_assoc();
@@ -315,7 +314,7 @@
                                         </tr>
                                     </thead>
                                     <?php
-                                   # include "banco.php";
+                                    # include "banco.php";
 
                                     $consultaTabela = "";
 
@@ -332,7 +331,7 @@
                                             <td><?php echo $dados["horario"]; ?></td>
                                             <td><?php echo $dados["data_agendamento"]; ?></td>
                                             <td><?php echo $dados["Tipo_atendimento"]; ?></td>
-                                            
+
                                             <td> <a href="agendamento.php?cod_servico=<?php echo $dados["cod_servico"]; ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
                                                 &nbsp;&nbsp;
 
@@ -350,7 +349,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -358,33 +357,42 @@
                     </div>
                 </div>
             </footer>
-           
+
 
         </div>
-      
+
 
     </div>
-   
+
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
- 
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-
     <script src="js/sb-admin-2.min.js"></script>
-
-
     <script src="vendor/chart.js/Chart.min.js"></script>
-
-   
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/jquery.mask.js"></script>
 
+    <script>
+        jQuery(document).ready(function() {
+            $('.nome').mask('A', {
+                translation: {
+                    A: {
+                        pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g,
+                        recursive: true
+                    },
+                },
+            });
+            
+            
+            $('.telefone').mask("(00)00000-0000")
+         
+        })
+    </script>
 </body>
 
 </html>
