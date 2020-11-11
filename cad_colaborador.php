@@ -198,7 +198,7 @@
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label><strong> Telefone: </strong></label>
-                                                <input type="text" name="telefone" class="form-control form-control-user telefone" id="exampleInputPassword" placeholder="Digite o CPF do Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
+                                                <input type="text" name="telefone" class="form-control form-control-user telefone" id="exampleInputPassword" placeholder="Digite o Telefone do Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
                                                                                                                                                                                                                     echo $dados["telefone"];
                                                                                                                                                                                                                 } ?>" required>
                                             </div>
