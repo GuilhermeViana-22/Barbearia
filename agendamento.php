@@ -12,10 +12,9 @@
     <title>High Hill - agendamento</title>
 
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-free/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -116,7 +115,7 @@
 
                 </nav>
 
-                
+
                 <div class="container-fluid">
 
 
@@ -170,15 +169,15 @@
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <label><strong>Nome : </strong></label>
                                             <input type="text" name="nome_cliente" class="form-control form-control-user nome" id="exampleFirstName" placeholder="Digite o nome do cliente" value="<?php if (isset($_GET["cod_servico"])) {
-                                                                                                                                                                                                    echo $dados["nome_cliente"];
-                                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                                        echo $dados["nome_cliente"];
+                                                                                                                                                                                                    } ?>" required>
                                         </div>
                                         <div class="col-sm-6">
                                             <label><strong> Telefone: </strong></label>
 
                                             <input type="text" name="telefone" class="form-control form-control-user telefone" id="exampleLastName" placeholder="Digite o telefone do cliente" value="<?php if (isset($_GET["cod_servico"])) {
-                                                                                                                                                                                                    echo $dados["telefone"];
-                                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                                            echo $dados["telefone"];
+                                                                                                                                                                                                        } ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -368,11 +367,11 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap2/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="chart.js/Chart.min.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/jquery.mask.js"></script>
@@ -387,10 +386,10 @@
                     },
                 },
             });
-            
-            
+
+
             $('.telefone').mask("(00)00000-0000")
-         
+
         })
     </script>
 </body>

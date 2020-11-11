@@ -9,13 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>High Hill - Cadastro colaborador</title>
+    <title>High Hill - Cadastro Barbeiros</title>
 
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-free/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -95,7 +94,7 @@
 
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle"  id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
                                                                                             include "banco.php";
                                                                                             include 'crud_verifica_login.php';
@@ -186,8 +185,8 @@
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label><strong> CPF: </strong></label>
                                                 <input type="text" name="cpf" class="form-control form-control-user cpf" id="exampleInputPassword" placeholder="Digite o CPF do Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                                                    echo $dados["cpf"];
-                                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                                        echo $dados["cpf"];
+                                                                                                                                                                                                    } ?>" required>
                                             </div>
                                             <div class="col-sm-6">
                                                 <label><strong> Data de nascimento: </strong></label>
@@ -200,145 +199,152 @@
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label><strong> Telefone: </strong></label>
                                                 <input type="text" name="telefone" class="form-control form-control-user telefone" id="exampleInputPassword" placeholder="Digite o CPF do Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                                                    echo $dados["telefone"];
-                                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                                                    echo $dados["telefone"];
+                                                                                                                                                                                                                } ?>" required>
                                             </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <label><strong> Salário: </strong></label>
-                                                <input type="text" name="salario" class="form-control form-control-user money2" id="exampleInputPassword" placeholder="Digite o Salário Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                                                            echo $dados["salario"];
-                                                                                                                                                                                                        } ?>" required>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <label><strong> Salário: </strong></label>
+                                                    <input type="text" name="salario" class="form-control form-control-user money2" id="exampleInputPassword" placeholder="Digite o Salário Colaborador" value="<?php if (isset($_GET["id_barbeiro"])) {
+                                                                                                                                                                                                                    echo $dados["salario"];
+                                                                                                                                                                                                                } ?>" required>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label><strong>Data de contratação: </strong></label>
+                                                    <input type="date" name="data_contrato" class="form-control form-control-user" id="exampleRepeatPassword" value="<?php if (isset($_GET["id_barbeiro"])) {
+                                                                                                                                                                            echo $dados["data_contrato"];
+                                                                                                                                                                        } ?>" required>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <label><strong>Data de contratação: </strong></label>
-                                                <input type="date" name="data_contrato" class="form-control form-control-user" id="exampleRepeatPassword" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                        echo $dados["data_contrato"];
-                                                                                                                                                                    } ?>" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label><strong> E-mail: </strong></label>
-                                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                                    echo $dados["email"];
-                                                                                                                                                                                } ?>" required>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <label><strong> Senha :</strong></label>
-                                                <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" value="<?php if (isset($_GET["id_barbeiro"])) {
-                                                                                                                                                                                        echo $dados["senha"];
+                                            <div class="form-group">
+                                                <label><strong> E-mail: </strong></label>
+                                                <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" value="<?php if (isset($_GET["id_barbeiro"])) {
+                                                                                                                                                                                        echo $dados["email"];
                                                                                                                                                                                     } ?>" required>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="row">
-                                                    <div class="col-sm-9"> <label style="padding: 6px;;"><strong> Ativo :</strong></label></div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <label><strong> Senha :</strong></label>
+                                                    <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" value="<?php if (isset($_GET["id_barbeiro"])) {
+                                                                                                                                                                                            echo $dados["senha"];
+                                                                                                                                                                                        } ?>" required>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="row">
+                                                        <div class="col-sm-9"> <label style="padding: 6px;;"><strong> Ativo :</strong></label></div>
 
-                                                </div class="row">
+                                                    </div class="row">
 
-                                                <div class="col-sm-3"> <input name="ativo" type="checkbox" value="S"  class="form-control form-control-user" style="width: 22px;" placeholder=""></div>
+                                                    <div class="col-sm-3"> <input name="ativo" type="checkbox" value="S" class="form-control form-control-user" style="width: 22px;" placeholder=""></div>
+                                                </div>
                                             </div>
                                         </div>
                                 </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
-                            </form>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
+                                </form>
 
-                            <div class="card shadow mb-4 " style="margin-top: 30px; padding: 30px; margin-left:30px;  margin-right:30px;">
+                                <div class="card shadow mb-4 " style="margin-top: 30px; padding: 30px; margin-left:30px;  margin-right:30px;">
 
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Barbeiros Cadastrado</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr>
-                                                    <th style="text-align: center;">Cód colab</th>
-                                                    <th>Nome</th>
-                                                    <th>E-mail</th>
-                                                    <th>Data de nascimento</th>
-                                                    <th>Telefone </th>
-                                                    <th>data de contratação </th>
-                                                    <th>Ativo</th>
-                                                    <th>Ações</th>
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Barbeiros Cadastrado</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align: center;">Cód colab</th>
+                                                        <th>Nome</th>
+                                                        <th>E-mail</th>
+                                                        <th>Data de nascimento</th>
+                                                        <th>Telefone </th>
+                                                        <th>data de contratação </th>
+                                                        <th>Ativo</th>
+                                                        <th>Ações</th>
 
-                                                </tr>
-                                            </thead>
-                                            <?php
-                                            # include "banco.php";
+                                                    </tr>
+                                                </thead>
+                                                <?php
+                                                # include "banco.php";
 
-                                            $consultaTabela = "";
+                                                $consultaTabela = "";
 
-                                            $consultaTabela = "SELECT * FROM barbeiro";
+                                                $consultaTabela = "SELECT * FROM barbeiro";
 
-                                            $queryColaborador = $conexao->query($consultaTabela);
+                                                $queryColaborador = $conexao->query($consultaTabela);
 
-                                            while ($dados = $queryColaborador->fetch_assoc()) {
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $dados["id_barbeiro"]; ?></td>
-                                                    <td><?php echo $dados["nome"]; ?></td>
-                                                    <td><?php echo $dados["email"]; ?></td>
-                                                    <td><?php echo date("d/m/Y", strtotime($dados["data_nascimento"])); ?></td>
-                                                    <td><?php echo $dados["telefone"]; ?></td>
-                                                    <td><?php echo date("d/m/Y", strtotime($dados["data_contrato"])); ?></td>
-                                                    <td><?php echo $dados["ativo"]; ?></td>
-                                                    <td> <a href="cad_colaborador.php?id_barbeiro=<?php echo $dados["id_barbeiro"]; ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                                                        &nbsp;&nbsp;
-                                                        <a href="crud_colaborador.php?excluir=1&id_barbeiro=<?php echo $dados["id_barbeiro"]; ?>" class="btn btn-danger btn-excluir-barbeiro"><i class="fas fa-times"></i></a></td>
-                                                </tr>
-                                            <?php  } ?>
-                                            </tbody>
-                                        </table>
+                                                while ($dados = $queryColaborador->fetch_assoc()) {
+                                                ?>
+                                                    <tr>
+                                                        <td><?php echo $dados["id_barbeiro"]; ?></td>
+                                                        <td><?php echo $dados["nome"]; ?></td>
+                                                        <td><?php echo $dados["email"]; ?></td>
+                                                        <td><?php echo date("d/m/Y", strtotime($dados["data_nascimento"])); ?></td>
+                                                        <td><?php echo $dados["telefone"]; ?></td>
+                                                        <td><?php echo date("d/m/Y", strtotime($dados["data_contrato"])); ?></td>
+                                                        <td><?php echo $dados["ativo"]; ?></td>
+                                                        <td> <a href="cad_colaborador.php?id_barbeiro=<?php echo $dados["id_barbeiro"]; ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                            &nbsp;&nbsp;
+                                                            <a href="crud_colaborador.php?excluir=1&id_barbeiro=<?php echo $dados["id_barbeiro"]; ?>" class="btn btn-danger btn-excluir-barbeiro"><i class="fas fa-times"></i></a></td>
+                                                    </tr>
+                                                <?php  } ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Barbearia High Hills 2020</span>
+                            </div>
+                        </div>
+                    </footer>
 
                 </div>
 
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Barbearia High Hills 2020</span>
-                        </div>
-                    </div>
-                </footer>
-
             </div>
-
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
         </div>
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-    </div>
 
 
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/jquery.mask.js"></script>
+        <script src="jquery/jquery.min.js"></script>
+        <script src="bootstrap2/js/bootstrap.bundle.min.js"></script>
+        <script src="jquery-easing/jquery.easing.min.js"></script>
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="chart.js/Chart.min.js"></script>
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="js/jquery.mask.js"></script>
 
-    <script>
-     jQuery(document).ready(function() {
-        $('.nome').mask('A', {
-  translation: {
-    A: { pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g, recursive: true },
-  },
-});
-        $('.cpf').mask('000.000.000-00', {reverse: true});
-        $('.money2').mask("00000", {reverse: true});
-        $('.telefone').mask("(00)00000-0000")
-        $('.rg').mask("00.000.000-0")
-    })
-    </script>
+        <script>
+            jQuery(document).ready(function() {
+                $('.nome').mask('A', {
+                    translation: {
+                        A: {
+                            pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g,
+                            recursive: true
+                        },
+                    },
+                });
+                $('.cpf').mask('000.000.000-00', {
+                    reverse: true
+                });
+                $('.money2').mask("00000", {
+                    reverse: true
+                });
+                $('.telefone').mask("(00)00000-0000")
+                $('.rg').mask("00.000.000-0")
+            })
+        </script>
 </body>
 
 </html>
