@@ -128,11 +128,11 @@
                                         <?php
 
                                         if ($_GET["sucesso"] == 1) {
-                                            echo "Cliente inserido com sucesso!";
+                                            echo "Agendamento Feito com sucesso!";
                                         } else if ($_GET["sucesso"] == 2) {
-                                            echo "Cliente atualizado com sucesso!";
+                                            echo "Agendamento atualizado com sucesso!";
                                         } else {
-                                            echo "Cliente excluído com sucesso!";
+                                            echo "Agendamento excluído com sucesso!";
                                         }
                                         ?>
                                     </div>
